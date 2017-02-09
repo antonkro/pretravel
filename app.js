@@ -5,7 +5,7 @@ var http = require('http').Server(app);
 // configure app ======================================================================
 app.set('view engine', 'ejs');
 app.set('views', __dirname + '/views');
-
+app.set('port', (process.env.PORT || 5000));
 
 // internal modules ======================================================================
 require(__dirname + '/routes.js')(app);
@@ -13,7 +13,7 @@ require(__dirname + '/events.js')(app);
 
 
 // HTTP ======================================================================
-http.listen(3000, function (req, res) {
-  console.log('listening on *:3000');
+app.listen(app.get('port'), function() {
+  console.log('Node app is running on port', app.get('port'));
 });
 

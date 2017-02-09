@@ -11,6 +11,11 @@
     "node": "7.5.0",
     "npm": "4.1.2"
   },
+
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/antonkro/pretravel"
+  },
   "scripts": {
     "start": "node app.js"
   }
